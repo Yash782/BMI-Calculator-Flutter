@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     var bmi = iWt / (toMeter * toMeter);
 
     setState(() {
-      tempResult = bmi.toString();
+      tempResult = bmi.toString().substring(0, 5);
       result = "BMI = $tempResult";
 
       if (bmi > 25) {
@@ -34,6 +34,9 @@ class _HomePageState extends State<HomePage> {
       } else {
         comment = "Great Shape";
       }
+      heightController.clear();
+      weightController.clear();
+      ageController.clear();
     });
   }
 
@@ -95,6 +98,7 @@ class _HomePageState extends State<HomePage> {
                   } else {
                     setState(() {
                       result = "Please fill all the feilds";
+                      comment = "";
                     });
                   }
                 },
@@ -110,7 +114,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                result.substring(0, 11),
+                result,
                 style: const TextStyle(fontSize: 30, color: Colors.white),
               ),
             ),

@@ -6,7 +6,9 @@ void main() {
 }
 
 class MainApp extends StatefulWidget {
-  const MainApp({super.key});
+  const MainApp({
+    super.key,
+  });
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -24,6 +26,7 @@ class _MainAppState extends State<MainApp> {
       home: Scaffold(
           appBar: AppBar(
             title: const Text('BMI Calculator'),
+            centerTitle: true,
           ),
           body: const HomePage()),
     );
