@@ -29,10 +29,10 @@ class _HomePageState extends State<HomePage> {
 
       if (bmi > 25) {
         comment = "Over weight";
-      } else if (bmi < 18) {
+      } else if (bmi < 18.5) {
         comment = "Under weight";
       } else {
-        comment = "Great Shape";
+        comment = "Normal";
       }
       heightController.clear();
       weightController.clear();
@@ -51,8 +51,12 @@ class _HomePageState extends State<HomePage> {
             TextField(
               controller: heightController,
               keyboardType: const TextInputType.numberWithOptions(),
-              decoration: const InputDecoration(
-                  focusedBorder: UnderlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.man_rounded),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green.shade200),
+                  ),
                   labelText: "Height",
                   suffixText: "Cm"),
             ),
@@ -62,8 +66,12 @@ class _HomePageState extends State<HomePage> {
             TextField(
               controller: weightController,
               keyboardType: const TextInputType.numberWithOptions(),
-              decoration: const InputDecoration(
-                  focusedBorder: UnderlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.monitor_weight),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green.shade200),
+                  ),
                   labelText: "Weight",
                   suffixText: "Kg"),
             ),
@@ -73,8 +81,12 @@ class _HomePageState extends State<HomePage> {
             TextField(
               controller: ageController,
               keyboardType: const TextInputType.numberWithOptions(),
-              decoration: const InputDecoration(
-                focusedBorder: UnderlineInputBorder(),
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                prefixIcon: const Icon(Icons.confirmation_number_outlined),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.green.shade200),
+                ),
                 labelText: "Age",
                 suffixText: "Yrs",
               ),
